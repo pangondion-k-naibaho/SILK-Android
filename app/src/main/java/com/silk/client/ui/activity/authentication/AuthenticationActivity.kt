@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
 import com.silk.client.R
 import com.silk.client.databinding.ActivityAuthenticationBinding
@@ -84,13 +85,19 @@ class AuthenticationActivity : AppCompatActivity(), FragmentsAuthCommunicator {
         }
 
         binding.btnAuthenticate.setOnClickListener {
-            val afCommunicator = loginFragment as AuthFragmentsCommunicator
+            val currentItem = binding.vpContent.currentItem
+
+            val afCommunicator = when(currentItem){
+                0 -> loginFragment
+                else -> registerFragment
+            }
 
             val status = afCommunicator.getFormCompleteStatus()
 
             if(status == true){
                 afCommunicator.onFormCompleted()
             }
+
         }
 
     }
@@ -125,5 +132,16 @@ class AuthenticationActivity : AppCompatActivity(), FragmentsAuthCommunicator {
 
     override fun executeLogin(email: String, password: String) {
         Log.d(TAG, "execute email: $email, password: $password for login")
+    }
+
+    override fun executeRegister(
+        firstName: String,
+        lastName: String,
+        ktp: String,
+        email: String,
+        phoneNum: String,
+        password: String
+    ) {
+        Toast.makeText(this@AuthenticationActivity, "This feature is still under development...", Toast.LENGTH_SHORT).show()
     }
 }

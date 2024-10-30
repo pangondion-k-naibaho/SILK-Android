@@ -159,11 +159,14 @@ class InputTextView :ConstraintLayout{
         binding.etInput.hint = inputHint
     }
 
-    fun setOnBlankWarning(){
+    fun setOnBlankWarning(customWarning: String?= null){
         binding.clEditText.apply {
             background = ContextCompat.getDrawable(mContext, R.drawable.bg_circular_rectangle_white_alarm)
         }
-        binding.tvWarning.visibility = View.VISIBLE
+        binding.tvWarning.apply {
+            visibility = View.VISIBLE
+            text = customWarning?: mContext.getString(R.string.itvTxtWarning)
+        }
     }
 
     fun setText(inputText: String){

@@ -17,10 +17,10 @@
     <string name="itvTxtEmailHint">Masukkan email anda</string>
     <string name="itvTxtPasswordTitle">Password</string>
     <string name="itvTxtPasswordHint">Masukkan password anda</string>
-    <string name="itvTxtFrontNameTitle">Nama Depan</string>
-    <string name="itvTxtFrontNameHint">Jhon</string>
-    <string name="itvTxtBackNameTitle">Nama Belakang</string>
-    <string name="itvTxtBackNameHint">Doe</string>
+    <string name="itvTxtFirstNameTitle">Nama Depan</string>
+    <string name="itvTxtFirstNameHint">Jhon</string>
+    <string name="itvTxtLastNameTitle">Nama Belakang</string>
+    <string name="itvTxtLastNameHint">Doe</string>
     <string name="itvTxtKTPTitle">No. KTP</string>
     <string name="itvTxtKTPHint">Masukkan No. KTP anda</string>
     <string name="itvTxtPhoneTitle">No.Telpon</string>
@@ -28,6 +28,7 @@
     <string name="itvTxtConfirmPasswordTitle">Konfirmasi Password</string>
     <string name="itvTxtConfirmPasswordHint">Konfirmasi password anda</string>
     <string name="itvTxtWarning">Kolom ini wajib diisi</string>
+    <string name="itvTxtWarningMismatch">Password dan konfirmasi password harus sama.</string>
 
     <!--    Button-->
     <string name="btnTxtLogin">Login</string>

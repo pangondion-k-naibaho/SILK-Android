@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="none"
     tools:context=".ui.activity.authentication.fragments.RegisterFragment">
 
-
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clContent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is fragment registration" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <com.silk.client.ui.custom_components.InputTextView
+            android:id="@+id/itvFirstName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/itvLastName"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="10dp"/>
+
+        <com.silk.client.ui.custom_components.InputTextView
+            android:id="@+id/itvLastName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itvFirstName"
+            app:layout_constraintTop_toTopOf="@+id/itvFirstName"
+            app:layout_constraintBottom_toBottomOf="@id/itvFirstName"
+            android:layout_marginStart="10dp"/>
+
+        <com.silk.client.ui.custom_components.InputTextView
+            android:id="@+id/itvKTP"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itvFirstName"
+            android:layout_marginTop="20dp"/>
+
+        <com.silk.client.ui.custom_components.InputTextView
+            android:id="@+id/itvEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/itvKTP"
+            android:layout_marginTop="20dp"/>
+
+        <com.silk.client.ui.custom_components.InputTextView
+            android:id="@+id/itvPhoneNum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itvEmail"
+            android:layout_marginTop="20dp"/>
+
+        <com.silk.client.ui.custom_components.InputTextView
+            android:id="@+id/itvPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itvPhoneNum"
+            android:layout_marginTop="20dp"/>
+
+        <com.silk.client.ui.custom_components.InputTextView
+            android:id="@+id/itvConfPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itvPassword"
+            android:layout_marginTop="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
