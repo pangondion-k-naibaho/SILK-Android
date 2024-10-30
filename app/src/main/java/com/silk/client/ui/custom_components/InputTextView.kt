@@ -155,6 +155,10 @@ class InputTextView :ConstraintLayout{
         binding.etInput.clearFocus()
     }
 
+    fun clearText(){
+        binding.etInput.text.clear()
+    }
+
     fun setHint(inputHint: String){
         binding.etInput.hint = inputHint
     }

@@ -68,11 +68,6 @@ class LoginFragment : Fragment(), AuthFragmentsCommunicator{
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
-
     override fun getFormCompleteStatus(): Boolean {
         val listItv =  listOf<InputTextView>(
             binding.itvEmail,
@@ -101,4 +96,14 @@ class LoginFragment : Fragment(), AuthFragmentsCommunicator{
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding.itvEmail.clearText()
+        binding.itvPassword.clearText()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }

@@ -110,11 +110,6 @@ class RegisterFragment : Fragment(), AuthFragmentsCommunicator {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
-
     override fun getFormCompleteStatus(): Boolean {
         var result = true
 
@@ -155,4 +150,22 @@ class RegisterFragment : Fragment(), AuthFragmentsCommunicator {
     }
 
     override fun setWarning() {}
+
+    override fun onResume() {
+        super.onResume()
+        binding.apply {
+            itvFirstName.clearText()
+            itvLastName.clearText()
+            itvKTP.clearText()
+            itvEmail.clearText()
+            itvPhoneNum.clearText()
+            itvPassword.clearText()
+            itvConfPassword.clearText()
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
 }

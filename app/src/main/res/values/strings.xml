@@ -33,4 +33,7 @@
     <!--    Button-->
     <string name="btnTxtLogin">Login</string>
     <string name="btnTxtRegister">Register</string>
+
+    <!--    Toast-->
+    <string name="toastUnderDev">Fitur ini masih dalam tahap pengembangan, coba lagi nanti</string>
 </resources>

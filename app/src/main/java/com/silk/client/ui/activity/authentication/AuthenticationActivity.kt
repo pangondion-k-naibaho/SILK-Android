@@ -142,6 +142,6 @@ class AuthenticationActivity : AppCompatActivity(), FragmentsAuthCommunicator {
         phoneNum: String,
         password: String
     ) {
-        Toast.makeText(this@AuthenticationActivity, "This feature is still under development...", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@AuthenticationActivity, getString(R.string.toastUnderDev), Toast.LENGTH_SHORT).show()
     }
 }
