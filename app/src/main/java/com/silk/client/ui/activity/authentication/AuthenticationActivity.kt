@@ -9,9 +9,14 @@ import android.view.View
 import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
 import com.silk.client.R
+import com.silk.client.data.Constants.PREFERENCES.Companion.APP_PREFERENCES
+import com.silk.client.data.Constants.PREFERENCES.Companion.TOKEN_KEY
 import com.silk.client.databinding.ActivityAuthenticationBinding
 import com.silk.client.ui.activity.authentication.fragments.LoginFragment
 import com.silk.client.ui.activity.authentication.fragments.RegisterFragment
+import com.silk.client.ui.activity.dashboard.DashboardActivity
+import com.silk.client.ui.viewmodels.AuthViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AuthenticationActivity : AppCompatActivity(), FragmentsAuthCommunicator {
     private val TAG = AuthenticationActivity::class.java.simpleName
@@ -21,6 +26,8 @@ class AuthenticationActivity : AppCompatActivity(), FragmentsAuthCommunicator {
     private lateinit var loginFragment: LoginFragment
     private lateinit var registerFragment: RegisterFragment
 
+    private val authViewModel: AuthViewModel by viewModel()
+
     companion object{
         fun newIntent(context: Context): Intent = Intent(context, AuthenticationActivity::class.java)
     }
@@ -29,8 +36,24 @@ class AuthenticationActivity : AppCompatActivity(), FragmentsAuthCommunicator {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthenticationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
+        observeStatus()
 
         setUpView()
+    }
+    
+    private fun observeStatus(){
+        authViewModel.isLoading.observe(this, {
+            setLayoutForLoading(it)
+        })
+        
+        authViewModel.isFail.observe(this, {
+            if(it){
+                Toast.makeText(this@AuthenticationActivity, getString(R.string.toastLoginFailed), Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this@AuthenticationActivity, getString(R.string.toastLoginSuccess), Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     private fun setUpView(){
@@ -122,16 +145,25 @@ class AuthenticationActivity : AppCompatActivity(), FragmentsAuthCommunicator {
         }
     }
 
-    override fun startLoading() {
-        setLayoutForLoading(true)
-    }
-
-    override fun stopLoading() {
-        setLayoutForLoading(false)
-    }
-
     override fun executeLogin(email: String, password: String) {
         Log.d(TAG, "execute email: $email, password: $password for login")
+        authViewModel.loginUser(email, password)
+
+        authViewModel.loginResponse.observe(this,{response->
+            Log.d(TAG, "response: $response")
+            if(!response!!.token.isNullOrEmpty()){
+                val appPreferences = this@AuthenticationActivity.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
+                val editor = appPreferences.edit()
+
+                editor.putString(TOKEN_KEY, response.token)
+                editor.apply()
+                if(editor.commit()){
+                    startActivity(DashboardActivity.newIntent(this@AuthenticationActivity))
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    finish()
+                }
+            }
+        })
     }
 
     override fun executeRegister(

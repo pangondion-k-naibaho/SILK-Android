@@ -108,4 +108,9 @@ dependencies {
 
     implementation "androidx.work:work-runtime-ktx:2.9.1"
 
+    implementation "io.insert-koin:koin-android:3.4.0"
+//    implementation "io.insert-koin:koin-androidx-viewmodel:3.4.0"
+//    implementation "io.insert-koin:koin-androidx-fragment:3.4.0"
+//    implementation "io.insert-koin:koin-android:3.4.0"
+
 }

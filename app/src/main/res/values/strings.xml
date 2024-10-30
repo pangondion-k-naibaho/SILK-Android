@@ -35,5 +35,7 @@
     <string name="btnTxtRegister">Register</string>
 
     <!--    Toast-->
-    <string name="toastUnderDev">Fitur ini masih dalam tahap pengembangan, coba lagi nanti</string>
+    <string name="toastUnderDev">Fitur ini masih dalam tahap pengembangan, Silahkan coba lagi nanti</string>
+    <string name="toastLoginFailed">Login gagal, silahkan coba lagi nanti</string>
+    <string name="toastLoginSuccess">Login berhasil! Anda akan diarahkan ke dashboard.</string>
 </resources>
