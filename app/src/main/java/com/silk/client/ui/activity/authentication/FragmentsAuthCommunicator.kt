@@ -5,4 +5,6 @@ interface FragmentsAuthCommunicator {
 
     fun stopLoading()
 
+    fun executeLogin(email: String, password: String)
+
 }

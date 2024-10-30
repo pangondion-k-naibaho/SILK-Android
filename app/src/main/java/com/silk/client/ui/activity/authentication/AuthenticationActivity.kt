@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2
 import com.silk.client.R
@@ -16,6 +17,8 @@ class AuthenticationActivity : AppCompatActivity(), FragmentsAuthCommunicator {
     private lateinit var binding: ActivityAuthenticationBinding
 
     private lateinit var adapterFragmentAuthentication: AdapterFragmentAuthentication
+    private lateinit var loginFragment: LoginFragment
+    private lateinit var registerFragment: RegisterFragment
 
     companion object{
         fun newIntent(context: Context): Intent = Intent(context, AuthenticationActivity::class.java)
@@ -36,8 +39,8 @@ class AuthenticationActivity : AppCompatActivity(), FragmentsAuthCommunicator {
                 lifecycle
             )
 
-            val loginFragment = LoginFragment.newInstance("Login")
-            val registerFragment = RegisterFragment.newInstance("Register")
+            loginFragment = LoginFragment.newInstance("Login")
+            registerFragment = RegisterFragment.newInstance("Register")
 
             val listFragment = listOf(loginFragment, registerFragment)
 
@@ -77,24 +80,17 @@ class AuthenticationActivity : AppCompatActivity(), FragmentsAuthCommunicator {
                 }
 
                 binding.vpContent.currentItem = nextItem
-
-//                text = when(binding.vpContent.currentItem){
-//                    0 -> getString(R.string.tvAuthRegisterDesc)
-//                    else -> getString(R.string.tvAuthLoginDesc)
-//                }
-//
-//                binding.tvAuthRegisterTitle.text = when(binding.vpContent.currentItem){
-//                    0 -> getString(R.string.tvAuthRegisterTitle)
-//                    else -> getString(R.string.tvAuthLoginTitle)
-//                }
-//
-//                binding.btnAuthenticate.text = when(binding.vpContent.currentItem){
-//                    0 -> getString(R.string.btnTxtLogin)
-//                    else -> getString(R.string.btnTxtRegister)
-//                }
             }
+        }
 
+        binding.btnAuthenticate.setOnClickListener {
+            val afCommunicator = loginFragment as AuthFragmentsCommunicator
 
+            val status = afCommunicator.getFormCompleteStatus()
+
+            if(status == true){
+                afCommunicator.onFormCompleted()
+            }
         }
 
     }
@@ -125,5 +121,9 @@ class AuthenticationActivity : AppCompatActivity(), FragmentsAuthCommunicator {
 
     override fun stopLoading() {
         setLayoutForLoading(false)
+    }
+
+    override fun executeLogin(email: String, password: String) {
+        Log.d(TAG, "execute email: $email, password: $password for login")
     }
 }

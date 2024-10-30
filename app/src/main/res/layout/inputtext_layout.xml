@@ -54,7 +54,7 @@
             android:fontFamily="@font/proximanova_regular"
             android:hint="@string/itvTxtEmailHint"
             android:textColor="@color/midnight_melancholia"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textColorHint="@color/rhine_castle"
             android:focusable="true"
             android:focusableInTouchMode="true"/>
