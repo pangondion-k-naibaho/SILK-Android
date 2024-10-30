@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Main Content View -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/emptiness"
+        android:paddingBottom="25dp">
+
+        <TextView
+            android:id="@+id/tvWelcomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="110dp"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/gilroy_bold"
+            android:textSize="28sp"
+            android:textColor="@color/midnight_melancholia"
+            android:text="@string/tvAuthWelcomeTitle"/>
+        <TextView
+            android:id="@+id/tvWelcomeDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvWelcomeTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvWelcomeTitle"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/gilroy_medium"
+            android:textColor="@color/blue_jacket"
+            android:textSize="12sp"
+            android:text="@string/tvAuthWelcomeDesc"/>
+
+        <ImageView
+            android:id="@+id/ivWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="218dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvWelcomeDesc"
+            android:src="@drawable/img_welcome"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivWelcome"
+            android:layout_marginHorizontal="20dp"
+            android:background="@null"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnAuthenticate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/vpContent"
+            app:layout_constraintBottom_toTopOf="@+id/clAuthRegister"
+            android:layout_marginHorizontal="20dp"
+            android:padding="12dp"
+            android:background="@drawable/bg_circular_rectangle_midmel"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/ic_arrow_right_white"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="@string/btnTxtLogin"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clAuthRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAuthenticate"
+            app:layout_constraintBottom_toTopOf="@+id/tvCredit"
+            android:layout_marginTop="30dp"
+            android:background="@null">
+
+            <TextView
+                android:id="@+id/tvAuthRegisterTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="70dp"
+                android:fontFamily="@font/proximanova_regular"
+                android:textSize="14sp"
+                android:textColor="@color/rhine_castle"
+                android:text="@string/tvAuthRegisterTitle"/>
+
+            <TextView
+                android:id="@+id/tvAuthRegisterDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/tvAuthRegisterTitle"
+                app:layout_constraintTop_toTopOf="@id/tvAuthRegisterTitle"
+                app:layout_constraintBottom_toBottomOf="@id/tvAuthRegisterTitle"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/proximanova_regular"
+                android:textColor="@color/midnight_melancholia"
+                android:textSize="14sp"
+                android:text="@string/tvAuthRegisterDesc"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvCredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clAuthRegister"
+            android:fontFamily="@font/proximanova_regular"
+            android:textSize="12sp"
+            android:textColor="@color/tin_soldier"
+            android:text="@string/tvCompanyCredit"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Loading Layout -->
+    <RelativeLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/midnight_melancholia_35"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <!-- Progress indicator or loading animation goes here -->
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/white"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">SILK</string>
+
+    <!--    TextView-->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tvAuthWelcomeTitle">Hai, <b>Selamat Datang</b></string>
+    <string name="tvAuthWelcomeDesc">Silahkan login untuk melanjutkan</string>
+    <string name="tvAuthForgotPassword">Lupa Password anda ?</string>
+    <string name="tvAuthRegisterTitle">Belum punya akun ?</string>
+    <string name="tvAuthRegisterDesc">Daftar sekarang</string>
+    <string name="tvAuthLoginTitle">Sudah punya akun ?</string>
+    <string name="tvAuthLoginDesc">Login sekarang</string>
+    <string name="tvCompanyCredit">&#169; SILK. all right reserved.</string>
+
+    <!--    InputText-->
+    <string name="itvTxtEmailTitle">Email</string>
+    <string name="itvTxtEmailHint">Masukkan email anda</string>
+    <string name="itvTxtPasswordTitle">Password</string>
+    <string name="itvTxtPasswordHint">Masukkan password anda</string>
+    <string name="itvTxtFrontNameTitle">Nama Depan</string>
+    <string name="itvTxtFrontNameHint">Jhon</string>
+    <string name="itvTxtBackNameTitle">Nama Belakang</string>
+    <string name="itvTxtBackNameHint">Doe</string>
+    <string name="itvTxtKTPTitle">No. KTP</string>
+    <string name="itvTxtKTPHint">Masukkan No. KTP anda</string>
+    <string name="itvTxtPhoneTitle">No.Telpon</string>
+    <string name="itvTxtPhoneHint">+628xxxxxxxxxx</string>
+    <string name="itvTxtConfirmPasswordTitle">Konfirmasi Password</string>
+    <string name="itvTxtConfirmPasswordHint">Konfirmasi password anda</string>
+    <string name="itvTxtWarning">Kolom ini wajib diisi</string>
+
+    <!--    Button-->
+    <string name="btnTxtLogin">Login</string>
+    <string name="btnTxtRegister">Register</string>
+</resources>
