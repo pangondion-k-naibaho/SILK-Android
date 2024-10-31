@@ -40,6 +40,7 @@
     <string name="toastUnderDev">Fitur ini masih dalam tahap pengembangan, Silahkan coba lagi nanti</string>
     <string name="toastLoginFailed">Login gagal, silahkan coba lagi nanti</string>
     <string name="toastLoginSuccess">Login berhasil! Anda akan diarahkan ke dashboard.</string>
+    <string name="toastLogoutSuccess">Anda telah berhasil keluar. Jangan ragu untuk kembali berkunjung!</string>
 
     <!--    RecyclerView-->
     <string name="tvDummyRating">5</string>
@@ -57,6 +58,8 @@
     <!--    Menu-->
     <string name="drawerMenuProfile">Profile Saya</string>
     <string name="drawerMenuSettings">Pengaturan</string>
+    <string name="toolbarMenuCart">Kereta Belanja</string>
+    <string name="toolbarMenuNotification">Notifikasi</string>
 
     <!--    Banner-->
     <string name="bannerTxtTitle1">Solusi, <b>Kesehatan Anda</b></string>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menuCart"
+        android:title="@string/toolbarMenuCart"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_shopping_cart"/>
+    <item
+        android:id="@+id/menuNotification"
+        android:title="@string/toolbarMenuNotification"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_bell_primary"/>
+</menu>
