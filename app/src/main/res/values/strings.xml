@@ -33,9 +33,38 @@
     <!--    Button-->
     <string name="btnTxtLogin">Login</string>
     <string name="btnTxtRegister">Register</string>
+    <string name="btnTxtLogout">Logout</string>
+    <string name="btnTxtSelengkapnya">Selengkapnya</string>
 
     <!--    Toast-->
     <string name="toastUnderDev">Fitur ini masih dalam tahap pengembangan, Silahkan coba lagi nanti</string>
     <string name="toastLoginFailed">Login gagal, silahkan coba lagi nanti</string>
     <string name="toastLoginSuccess">Login berhasil! Anda akan diarahkan ke dashboard.</string>
+
+    <!--    RecyclerView-->
+    <string name="tvDummyRating">5</string>
+    <string name="tvDummyProductName">Suntik Steril</string>
+    <string name="tvDummyPrice">Rp. 10.000</string>
+    <string name="tvDummyStockStatus">Ready Stok</string>
+
+    <!--    Drawer Navigation-->
+    <string name="drawerTxtName"><b>Angga</b> Praja</string>
+    <string name="drawerTxtMembership">Membership BBLK</string>
+    <string name="drawerTxtFollowUs">Ikuti kami di</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+
+    <!--    Menu-->
+    <string name="drawerMenuProfile">Profile Saya</string>
+    <string name="drawerMenuSettings">Pengaturan</string>
+
+    <!--    Banner-->
+    <string name="bannerTxtTitle1">Solusi, <b>Kesehatan Anda</b></string>
+    <string name="bannerTxtDesc1">Update informasi seputar kesehatan semua bisa disini !</string>
+    <string name="bannerTxtTitle2"><b>Layanan Khusus</b></string>
+    <string name="bannerTxtDesc2">Tes Covid 19, Cegah Corona Sedini Mungkin</string>
+    <string name="bannerTxtAction2">Daftar Tes</string>
+    <string name="bannerTxtTitle3"><b>Track Pemeriksaan</b></string>
+    <string name="bannerTxtDesc3">Kamu dapat mengecek progress pemeriksaanmu disini</string>
+    <string name="bannerTxtAction3">Track</string>
 </resources>

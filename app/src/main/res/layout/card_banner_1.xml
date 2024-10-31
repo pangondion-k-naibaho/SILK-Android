@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@null">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCard"
+        android:layout_width="350dp"
+        android:layout_height="131dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/background1"/>
+
+    <TextView
+        android:id="@+id/tvBannerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/clCard"
+        app:layout_constraintTop_toTopOf="@id/clCard"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/gilroy_regular"
+        android:textSize="18sp"
+        android:textColor="@color/midnight_melancholia"
+        android:text="@string/bannerTxtTitle1"/>
+
+    <ImageView
+        android:id="@+id/ivBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/clCard"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBannerTitle"
+        app:layout_constraintTop_toTopOf="@id/tvBannerTitle"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/img_calendar"/>
+
+    <TextView
+        android:id="@+id/tvBannerDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tvBannerTitle"
+        app:layout_constraintEnd_toEndOf="@+id/tvBannerTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvBannerTitle"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/proximanova_regular"
+        android:textSize="12sp"
+        android:textColor="@color/blue_jacket"
+        android:text="@string/bannerTxtDesc1"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBanner"
+        android:layout_width="110dp"
+        android:layout_height="32dp"
+        app:layout_constraintStart_toStartOf="@+id/tvBannerDesc"
+        app:layout_constraintTop_toBottomOf="@+id/tvBannerDesc"
+        app:layout_constraintBottom_toBottomOf="@+id/clCard"
+        android:paddingVertical="7dp"
+        android:paddingHorizontal="15dp"
+        android:background="@drawable/bg_circular_rectangle_midmel"
+        android:textColor="@color/white"
+        android:fontFamily="@font/gilroy_regular"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:text="@string/btnTxtSelengkapnya"/>
+
+    <ImageView
+        android:id="@+id/ivBannerOrnament"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/ivBanner"
+        app:layout_constraintEnd_toEndOf="@+id/ivBanner"
+        app:layout_constraintBottom_toBottomOf="@+id/clCard"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_cute_ornamen"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

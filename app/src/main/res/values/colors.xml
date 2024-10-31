@@ -104,15 +104,19 @@
 
     <color name="emptiness">#FCFCFC</color>
     <color name="midnight_melancholia">#002060</color>
+    <color name="midnight_melancholia_80">#CC002060</color>
+    <color name="midnight_melancholia_55">#8C002060</color>
     <color name="midnight_melancholia_35">#59002060</color>
     <color name="philippine_orange">#FF7200</color>
     <color name="neo_mint">#B3FFCB</color>
     <color name="green_glutton">#007025</color>
     <color name="tin_soldier">#BEBEBE</color>
     <color name="alarm">#EB0004</color>
+    <color name="wildflower_bouquet">#FFB3B4</color>
     <color name="mint_morning">#00D9D5</color>
     <color name="rhine_castle">#5F5F5F</color>
     <color name="blue_jacket">#597393</color>
+    <color name="hydrargyrum">#9A9A9A</color>
 
     <color name="full_transparent">#00000000</color>
 
